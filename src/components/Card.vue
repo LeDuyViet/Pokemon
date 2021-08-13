@@ -100,7 +100,7 @@ export default {
   display: inline-block;
   margin-right: 1rem;
   margin-bottom: 1rem;
-  perspective: 100px;
+  perspective: 200px;
 }
 .card__inner {
   width: 100%;

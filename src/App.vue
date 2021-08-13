@@ -5,6 +5,7 @@
   />
   <interact-screen v-if="statusMatch === 'match'" :cardContext="settings.cardContext" @onFinish="onGetResult" />
   <result-screen v-if="statusMatch === 'result'" :timer="timer" @onStartAgain="this.statusMatch='default'" />
+  <copy-right />
 </template>
 
 <script>
@@ -12,6 +13,7 @@ import MainScreen from "./components/MainScreen.vue";
 import InteractScreen from "./components/InteractScreen.vue";
 import { shuffled } from "./utils/array.js";
 import ResultScreen from "./components/ResultScreen.vue";
+import CopyRight from "./components/CopyRight.vue";
 
 export default {
   name: "App",
@@ -19,6 +21,7 @@ export default {
     MainScreen,
     InteractScreen,
     ResultScreen,
+    CopyRight,
   },
   data() {
     return {
@@ -27,7 +30,7 @@ export default {
         cardContext: [],
         startAt: null,
       },
-      statusMatch: "result",
+      statusMatch: "default",
       timer: null,
     };
   },
